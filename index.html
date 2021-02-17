@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assigment 2</title>
+</head>
+<body>
+
+<input type="text" id="textinput" name="" placeholder="Write Something Here">
+<br>
+<input type="button" name="" value="Add" onclick="AddNewParagraph()">
+
+<br><br>
+
+<input type="button" name="" value="Change to red" onclick="changeToRed()">
+<input type="button" name="" value="Change to blue" onclick="changeToBlue()">
+
+<div id="content">
+</div>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script type="text/javascript">
+	function addNewParagraph() {
+		var inputValue = document.getElementById("textinput").value;
+		d3.select("#content").insert("p").text(inputValue);
+	}
+
+	function changeToRed() {
+		d3.selectAll("p").style("color", "red");
+	}
+
+	function changeToBlue() {
+		d3.selectAll("p").style("color", "blue");
+	}
+</script>
+
+
+
+</body>
